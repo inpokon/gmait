@@ -887,7 +887,7 @@ html, body {
 
 .checkbox__text:after {
   display: none;
-  content: url("/images/sprites/svg/check.svg");
+  content: url("../images/sprites/svg/check.svg");
   position: absolute;
   top: -1px;
   left: 2px;
@@ -984,7 +984,7 @@ html, body {
   cursor: pointer;
   outline: none; }
   .ui-selectmenu-button.ui-button::after {
-    content: url("/images/sprites/svg/arrow-down.svg");
+    content: url("../images/sprites/svg/arrow-down.svg");
     position: absolute;
     right: 0;
     top: 50%;
@@ -2160,7 +2160,7 @@ html, body {
 .company-banner {
   height: 804px;
   padding-top: 190px;
-  background-image: url("/images/about-company-banner.jpg");
+  background-image: url("../images/about-company-banner.jpg");
   background-position: center center;
   background-repeat: no-repeat;
   -webkit-background-size: cover;
@@ -3860,7 +3860,7 @@ a.breadcrumb:hover {
   .footer__checkbox .checkbox__text::before {
     border-color: #fff; }
   .footer__checkbox .checkbox__text::after {
-    content: url("/images/sprites/svg/check-white.svg"); }
+    content: url("../images/sprites/svg/check-white.svg"); }
 
 .footer__nav {
   width: 25%;
