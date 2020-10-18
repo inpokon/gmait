@@ -154,156 +154,6 @@
 /************************************************************************/
 /******/ ({
 
-/***/ "./src/js/common/card.js":
-/*!*******************************!*\
-  !*** ./src/js/common/card.js ***!
-  \*******************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-$(document).ready(function () {
-  $('#card-info').tabs();
-});
-
-/***/ }),
-
-/***/ "./src/js/common/company.js":
-/*!**********************************!*\
-  !*** ./src/js/common/company.js ***!
-  \**********************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-$(document).ready(function () {
-  // слайдер для блока полезной иноформации на главной странице
-  $('.production__slider').slick({
-    infinite: true,
-    dots: false,
-    variableWidth: true,
-    slidesToShow: 2,
-    centerMode: true,
-    slidesToScroll: 1,
-    prevArrow: '<div class="btn-slide btn-slide--left production__arrow ">' + '<svg class="btn-slide__svg" width="21" height="16" viewBox="0 0 21 16" xmlns="http://www.w3.org/2000/svg"> <use xlink:href="../images/sprites.svg#arrow"></use>' + '</svg>' + '</div>',
-    nextArrow: '<div class="btn-slide btn-slide--right production__arrow "><svg class="btn-slide__svg" width="21" height="16" viewBox="0 0 21 16"  xmlns="http://www.w3.org/2000/svg"><use xlink:href="../images/sprites.svg#arrow"></use></svg></div>'
-  });
-  $('.partners__slider').slick({
-    infinite: true,
-    dots: false,
-    variableWidth: true,
-    centerPadding: '15px',
-    slidesToShow: 3,
-    slidesToScroll: 1,
-    prevArrow: '<div class="btn-slide btn-slide--left partners__arrow ">' + '<svg class="btn-slide__svg" width="21" height="16" viewBox="0 0 21 16" xmlns="http://www.w3.org/2000/svg"> <use xlink:href="../images/sprites.svg#arrow"></use>' + '</svg>' + '</div>',
-    nextArrow: '<div class="btn-slide btn-slide--right partners__arrow "><svg class="btn-slide__svg" width="21" height="16" viewBox="0 0 21 16"  xmlns="http://www.w3.org/2000/svg"><use xlink:href="../images/sprites.svg#arrow"></use></svg></div>'
-  });
-});
-
-/***/ }),
-
-/***/ "./src/js/common/main.js":
-/*!*******************************!*\
-  !*** ./src/js/common/main.js ***!
-  \*******************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-$(document).ready(function () {
-  // анимация баннера на главной странице
-  setTimeout(function () {
-    $('.banner__ellipse').addClass('banner__ellipse--active');
-    $('.plus').addClass('plus--active');
-    setTimeout(function () {
-      $('.banner__group-of-squares').addClass('banner__group-of-squares--active');
-    }, 500);
-  }, 500); // слайдер баннера на главной странице
-
-  $('.banner__wrap').slick({
-    infinite: true,
-    arrows: false,
-    dots: true,
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    speed: 500,
-    fade: true,
-    cssEase: 'linear'
-  }); // автовысота для textarea
-
-  $('textarea').on('input', function () {
-    this.style.height = 'auto';
-    this.style.height = this.scrollHeight + 'px';
-  }); // слайдер для блока полезной иноформации на главной странице
-
-  $('.useful-information__slider').slick({
-    infinite: true,
-    dots: false,
-    variableWidth: true,
-    slidesToShow: 4,
-    slidesToScroll: 1,
-    prevArrow: '<div class="btn-slide btn-slide--left useful-information__arrow ">' + '<svg class="btn-slide__svg" width="21" height="16" viewBox="0 0 21 16" xmlns="http://www.w3.org/2000/svg"> <use xlink:href="../images/sprites.svg#arrow"></use>' + '</svg>' + '</div>',
-    nextArrow: '<div class="btn-slide btn-slide--right useful-information__arrow "><svg class="btn-slide__svg" width="21" height="16" viewBox="0 0 21 16"  xmlns="http://www.w3.org/2000/svg"><use xlink:href="../images/sprites.svg#arrow"></use></svg></div>'
-  });
-  $('#partnership-tabs').tabs();
-  $('.partnership__item-button').on('click', function (e) {
-    e.preventDefault();
-    var $this = $(e.currentTarget);
-    var cities = $('.partnership__city');
-
-    if ($this.parent('.partnership__city').hasClass('partnership__city--active')) {
-      cities.removeClass('partnership__city--hidden');
-      cities.removeClass('partnership__city--active');
-    } else {
-      cities.addClass('partnership__city--hidden');
-      cities.removeClass('partnership__city--active');
-      $this.parent('.partnership__city').removeClass('partnership__city--hidden');
-      $this.parent('.partnership__city').addClass('partnership__city--active');
-    }
-  });
-  $("#list-cities").selectmenu();
-  $('.questions__accordion-top').on('click', function (e) {
-    e.preventDefault();
-    $(e.currentTarget).parent('.questions__accordion-item').toggleClass('questions__accordion-item--active');
-  });
-});
-
-/***/ }),
-
-/***/ "./src/js/common/useful.js":
-/*!*********************************!*\
-  !*** ./src/js/common/useful.js ***!
-  \*********************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-$(document).ready(function () {
-  $('#useful-articles-tabs').tabs();
-});
-
-/***/ }),
-
-/***/ "./src/js/common/yandexMap.js":
-/*!************************************!*\
-  !*** ./src/js/common/yandexMap.js ***!
-  \************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-ymaps.ready(init);
-
-function init() {
-  var myMap = new ymaps.Map("map", {
-    center: [60.76, 90.64],
-    zoom: 4
-  }, {
-    searchControlProvider: 'yandex#search'
-  });
-  myMap.geoObjects.add(new ymaps.Placemark([60.76, 90.64], {}, {
-    preset: 'islands#icon',
-    iconColor: 'red'
-  }));
-}
-
-/***/ }),
-
 /***/ "./src/js/main.js":
 /*!************************!*\
   !*** ./src/js/main.js ***!
@@ -324,15 +174,173 @@ __webpack_require__.r(__webpack_exports__);
 
 __webpack_require__(/*! ./vendor/slick.min.js */ "./src/js/vendor/slick.min.js");
 
-__webpack_require__(/*! ./common/yandexMap.js */ "./src/js/common/yandexMap.js");
+$(document).ready(function () {
+  /* main */
+  $('.nav__burger').on('click', function (e) {
+    e.preventDefault();
+    e.stopPropagation();
+    $('.nav__burger').toggleClass('nav__burger--active');
+    $('.nav__wrap').toggleClass('nav__wrap--active');
+  });
 
-__webpack_require__(/*! ./common/main.js */ "./src/js/common/main.js");
+  if (!!$('.banner').length) {
+    // анимация баннера на главной странице
+    setTimeout(function () {
+      $('.banner__ellipse').addClass('banner__ellipse--active');
+      $('.plus').addClass('plus--active');
+      setTimeout(function () {
+        $('.banner__group-of-squares').addClass('banner__group-of-squares--active');
+      }, 500);
+    }, 500); // слайдер баннера на главной странице
 
-__webpack_require__(/*! ./common/company.js */ "./src/js/common/company.js");
+    $('.banner__wrap').slick({
+      infinite: true,
+      arrows: false,
+      dots: true,
+      slidesToShow: 1,
+      slidesToScroll: 1,
+      speed: 500,
+      fade: true,
+      cssEase: 'linear'
+    }); // слайдер для блока полезной иноформации на главной странице
 
-__webpack_require__(/*! ./common/useful.js */ "./src/js/common/useful.js");
+    $('.useful-information__slider').slick({
+      infinite: true,
+      dots: false,
+      variableWidth: true,
+      slidesToShow: 4,
+      slidesToScroll: 1,
+      prevArrow: '<div class="btn-slide btn-slide--left useful-information__arrow ">' + '<svg class="btn-slide__svg" width="21" height="16" viewBox="0 0 21 16" xmlns="http://www.w3.org/2000/svg"> <use xlink:href="../images/sprites.svg#arrow"></use>' + '</svg>' + '</div>',
+      nextArrow: '<div class="btn-slide btn-slide--right useful-information__arrow "><svg class="btn-slide__svg" width="21" height="16" viewBox="0 0 21 16"  xmlns="http://www.w3.org/2000/svg"><use xlink:href="../images/sprites.svg#arrow"></use></svg></div>',
+      responsive: [{
+        breakpoint: 1278,
+        settings: {
+          slidesToShow: 2
+        }
+      }]
+    });
+  }
 
-__webpack_require__(/*! ./common/card.js */ "./src/js/common/card.js");
+  if (!!$('textarea').length) {
+    // автовысота для textarea
+    $('textarea').on('input', function () {
+      this.style.height = 'auto';
+      this.style.height = this.scrollHeight + 'px';
+    });
+  }
+
+  if (!!$('#partnership-tabs').length) {
+    $('#partnership-tabs').tabs();
+  }
+
+  $('.partnership__item-button').on('click', function (e) {
+    e.preventDefault();
+    var $this = $(e.currentTarget);
+    var cities = $('.partnership__city');
+
+    if ($this.parent('.partnership__city').hasClass('partnership__city--active')) {
+      cities.removeClass('partnership__city--hidden');
+      cities.removeClass('partnership__city--active');
+    } else {
+      cities.addClass('partnership__city--hidden');
+      cities.removeClass('partnership__city--active');
+      $this.parent('.partnership__city').removeClass('partnership__city--hidden');
+      $this.parent('.partnership__city').addClass('partnership__city--active');
+    }
+  });
+
+  if (!!$("#list-cities").length) {
+    $("#list-cities").selectmenu();
+  }
+
+  $('.questions__accordion-top').on('click', function (e) {
+    e.preventDefault();
+    $(e.currentTarget).parent('.questions__accordion-item').toggleClass('questions__accordion-item--active');
+  });
+  /* end main*/
+
+  /* company */
+
+  $('.company-banner__play').on('click', function (e) {
+    e.preventDefault();
+    $('.company-banner .container').toggleClass('container--hidden');
+    $('.video-js').toggleClass('video-js--active');
+    var options = {};
+    var player = videojs('video-company', options, function onPlayerReady() {
+      this.play(); // How about an event listener?
+
+      this.on('ended', function () {
+        $('.company-banner .container').toggleClass('container--hidden');
+        $('.video-js').toggleClass('video-js--active');
+      });
+    });
+  }); // слайдер для блока полезной иноформации на главной странице
+
+  if (!!$('.production__slider').length) {
+    $('.production__slider').slick({
+      infinite: true,
+      dots: false,
+      variableWidth: true,
+      slidesToShow: 2,
+      centerMode: true,
+      slidesToScroll: 1,
+      prevArrow: '<div class="btn-slide btn-slide--left production__arrow ">' + '<svg class="btn-slide__svg" width="21" height="16" viewBox="0 0 21 16" xmlns="http://www.w3.org/2000/svg"> <use xlink:href="../images/sprites.svg#arrow"></use>' + '</svg>' + '</div>',
+      nextArrow: '<div class="btn-slide btn-slide--right production__arrow "><svg class="btn-slide__svg" width="21" height="16" viewBox="0 0 21 16"  xmlns="http://www.w3.org/2000/svg"><use xlink:href="../images/sprites.svg#arrow"></use></svg></div>'
+    });
+  }
+
+  if (!!$('.partners__slider').length) {
+    $('.partners__slider').slick({
+      infinite: true,
+      dots: false,
+      variableWidth: true,
+      centerPadding: '15px',
+      slidesToShow: 3,
+      slidesToScroll: 1,
+      prevArrow: '<div class="btn-slide btn-slide--left partners__arrow ">' + '<svg class="btn-slide__svg" width="21" height="16" viewBox="0 0 21 16" xmlns="http://www.w3.org/2000/svg"> <use xlink:href="../images/sprites.svg#arrow"></use>' + '</svg>' + '</div>',
+      nextArrow: '<div class="btn-slide btn-slide--right partners__arrow "><svg class="btn-slide__svg" width="21" height="16" viewBox="0 0 21 16"  xmlns="http://www.w3.org/2000/svg"><use xlink:href="../images/sprites.svg#arrow"></use></svg></div>'
+    });
+  }
+  /* end company*/
+
+  /* card */
+
+
+  if (!!$('#card-info').length) {
+    $('#card-info').tabs();
+  }
+  /* end card */
+
+  /* useful page */
+
+
+  if (!!$('#useful-articles-tabs').length) {
+    $('#useful-articles-tabs').tabs();
+  }
+  /* end useful page*/
+
+  /* yandex-map */
+
+
+  if (!!$('#map').length) {
+    var init = function init() {
+      var myMap = new ymaps.Map("map", {
+        center: [60.76, 90.64],
+        zoom: 4
+      }, {
+        searchControlProvider: 'yandex#search'
+      });
+      myMap.geoObjects.add(new ymaps.Placemark([60.76, 90.64], {}, {
+        preset: 'islands#icon',
+        iconColor: 'red'
+      }));
+    };
+
+    ymaps.ready(init);
+  }
+  /* end yandex-map */
+
+});
 
 /***/ }),
 
